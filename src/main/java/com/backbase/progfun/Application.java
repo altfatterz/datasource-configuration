@@ -20,6 +20,9 @@ public class Application {
     }
 
     @Autowired
+    DatabaseLoader databaseLoader;
+
+    @Autowired
     PageRepository pageRepository;
 
     @PostConstruct
