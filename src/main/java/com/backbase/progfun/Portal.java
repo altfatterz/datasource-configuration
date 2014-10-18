@@ -1,5 +1,6 @@
 package com.backbase.progfun;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties("new")
 public class Portal extends AbstractPersistable<Long> {
 
     private String name;
