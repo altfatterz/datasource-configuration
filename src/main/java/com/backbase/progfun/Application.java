@@ -8,15 +8,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.PostConstruct;
 
 @ComponentScan
 @EnableAutoConfiguration
 public class Application extends SpringBootServletInitializer {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -37,15 +32,4 @@ public class Application extends SpringBootServletInitializer {
 
     @Autowired(required = false)
     DatabaseLoader databaseLoader;
-
-    @Autowired
-    PageRepository pageRepository;
-
-    @PostConstruct
-    void init() {
-        for (Page page : pageRepository.findAll()) {
-            LOGGER.info(page.toString());
-        }    
-    }
-
 }
