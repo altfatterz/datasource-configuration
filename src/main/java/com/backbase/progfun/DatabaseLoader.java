@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 
 @Service
-@Profile("!production")
+@Profile("default")
 public class DatabaseLoader {
 
     private final PageRepository pageRepository;
