@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
-
+@Configuration
 @ComponentScan
 @EnableAutoConfiguration
 public class Application extends SpringBootServletInitializer {
@@ -40,10 +40,11 @@ public class Application extends SpringBootServletInitializer {
     @Autowired
     PageRepository pageRepository;
 
-    @PostConstruct
+    //@PostConstruct
     void init() {
         for (Page page : pageRepository.findAll()) {
             LOGGER.info(page.toString());
         }    
     }
+
 }
