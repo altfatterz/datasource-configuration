@@ -21,7 +21,7 @@ public class DatabaseLoader {
 
     @PostConstruct
     private void initDatabase() {
-        Portal portal = new Portal("Gulf retail banking");
+        Portal portal = new Portal("ABN AMRO Retail Banking");
         portalRepository.save(portal);
 
         Page page = new Page();
