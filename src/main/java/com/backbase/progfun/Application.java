@@ -28,6 +28,4 @@ public class Application extends SpringBootServletInitializer {
         return application.sources(Application.class);
     }
 
-    @Autowired(required = false)
-    DatabaseLoader databaseLoader;
 }
